@@ -157,6 +157,18 @@ export class ProductsComponent implements OnInit, OnDestroy {
     this.updateUrl({ brand: brandId, page: 1, categoryId: undefined });
   }
 
+  clearFilters(): void {
+    this.router.navigate([], {
+      relativeTo: this.activatedRoute,
+      queryParams: {
+        page: 1,
+        categoryId: null,
+        brand: null
+      },
+      queryParamsHandling: 'merge'
+    });
+  }
+
   ngOnDestroy(): void {
     this.productsSubscription.unsubscribe();
     this.categoriesSubscription.unsubscribe();

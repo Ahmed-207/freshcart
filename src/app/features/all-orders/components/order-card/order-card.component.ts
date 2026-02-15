@@ -1,11 +1,12 @@
 import { Component, input, InputSignal, model, ModelSignal } from '@angular/core';
 import { UserOrders } from '../../models/user-orders.interface';
 import { CurrencyPipe } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-order-card',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, TranslatePipe],
   templateUrl: './order-card.component.html',
   styleUrl: './order-card.component.css',
 })
