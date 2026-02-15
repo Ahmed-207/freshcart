@@ -1,0 +1,129 @@
+{
+    "Home": "الرئيسية",
+    "Categories": "الفئات",
+    "Products": "المنتجات",
+    "Brands": "العلامات التجارية",
+    "My Orders": "طلباتي",
+    "Login": "تسجيل الدخول",
+    "Register": "إنشاء حساب",
+    "Profile": "الملف الشخصي",
+    "Wishlist": "قائمة الأمنيات",
+    "Sign Out": "تسجيل الخروج",
+    "enter the code sent to your email": "أدخل الرمز المرسل إلى بريدك الإلكتروني",
+    "Verification Code": "رمز التحقق",
+    "verify": "تحقق",
+    "Forget password ?": "نسيت كلمة المرور؟",
+    "Email address": "البريد الإلكتروني",
+    "Login Now": "سجل دخول الآن",
+    "Password": "كلمة المرور",
+    "don't have an acount? ": "ليس لديك حساب؟ ",
+    "create new account": "إنشاء حساب جديد",
+    "forgot your password ? ": "نسيت كلمة المرور؟ ",
+    "reset now": "إعادة تعيين الآن",
+    "Name": "الاسم",
+    "username is required": "اسم المستخدم مطلوب",
+    "username must be at least 3 charcters and at most 9 characters": "يجب أن يكون اسم المستخدم بين 3 إلى 9 أحرف",
+    "Email address is required": "البريد الإلكتروني مطلوب",
+    "Please enter a valid email address": "يرجى إدخال بريد إلكتروني صحيح",
+    "Password is required": "كلمة المرور مطلوبة",
+    "Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character": "يجب أن تكون 8 أحرف على الأقل، تشمل حرفاً كبيراً، وحرفاً صغيراً، ورقماً، ورمزاً خاصاً",
+    "Confirm password": "تأكيد كلمة المرور",
+    "Confirm your password correcty": "تأكد من مطابقة كلمة المرور بشكل صحيح",
+    "Phone Number": "رقم الهاتف",
+    "phone number is required": "رقم الهاتف مطلوب",
+    "Please enter a valid egyptian phone number": "يرجى إدخال رقم هاتف مصري صحيح",
+    "Reset Your Password": "إعادة تعيين كلمة المرور",
+    "New password": "كلمة المرور الجديدة",
+    "Submit": "إرسال",
+    "My all orders": "جميع طلباتي",
+    "Order #": "طلب رقم #",
+    "No items to show": "لا توجد عناصر لعرضها",
+    "Shop Our Brands": "تسوق ماركاتنا",
+    "Cart items": "عناصر العربة",
+    "Total Count : ": "العدد الإجمالي: ",
+    "Empty Cart": "عربة فارغة",
+    "Looks like you haven't added any products yet. Start exploring our amazing collection and find something you love!": "يبدو أنك لم تضف أي منتجات بعد. ابدأ باستكشاف مجموعتنا الرائعة وجد ما تحب!",
+    "Start Shopping Now": "ابدأ التسوق الآن",
+    "Free": "مجاني",
+    "Shipping": "الشحن",
+    "Support": "الدعم",
+    "Order Summary": "ملخص الطلب",
+    "Total price": "السعر الإجمالي",
+    "Proceed To CheckOut": "إتمام الشراء",
+    "Shipping Details": "تفاصيل الشحن",
+    "Details": "التفاصيل",
+    "Phone": "الهاتف",
+    "City": "المدينة",
+    "Pay with Cash": "الدفع عند الاستلام",
+    "Pay with card": "الدفع بالبطاقة",
+    "add to cart": "إضافة إلى العربة",
+    "Our Popular Categories": "فئاتنا الشائعة",
+    "Our Popular Products": "منتجاتنا الشائعة",
+    "Our Products": "منتجاتنا",
+    "No Products Found": "لم يتم العثور على منتجات",
+    "We couldn't find any products matching your criteria. Try adjusting your filters or browse our featured collections.": "لم نتمكن من العثور على منتجات تطابق بحثك. جرب تعديل الفلاتر أو تصفح مجموعاتنا المميزة.",
+    "Clear all filters": "مسح جميع الفلاتر",
+    "Change My Password": "تغيير كلمة المرور",
+    "Old Password": "كلمة المرور القديمة",
+    "Re-Enter New Password": "إعادة إدخال كلمة المرور الجديدة",
+    "New Password": "كلمة المرور الجديدة",
+    "change password": "تغيير كلمة المرور",
+    "Hi, ": "مرحباً، ",
+    "Edit My Profile": "تعديل ملفي الشخصي",
+    "E-mail Adress": "البريد الإلكتروني",
+    "change profile info": "تغيير معلومات الحساب",
+    "update profile": "تحديث الملف الشخصي",
+    "My wishlist": "قائمة أمنياتي",
+    "Your Wishlist is Empty": "قائمة أمنياتك فارغة",
+    " Start adding items you love to your wishlist.Save your favorites and never lose track of products you want!": "ابدأ بإضافة العناصر التي تحبها إلى قائمة الأمنيات. احفظ مفضلاتك ولا تفقد المنتجات التي تريدها أبداً!",
+    "Start Shopping": "ابدأ التسوق",
+    "Get The App": "حمل التطبيق",
+    "We Will Send You a Link, Open it on Your Phone to download the app": "سنرسل لك رابطاً، افتحه على هاتفك لتحميل التطبيق",
+    "Share App Link": "مشاركة رابط التطبيق",
+    "Payment partners": "شركاء الدفع",
+    "Get Deliveries with ": "احصل على توصيل بواسطة ",
+    "Add to Cart": "إضافة إلى العربة",
+    "Register Now": "سجل الان",
+    "Open main menu": "فتح القائمة الرئيسية",
+    "AUTH": {
+        "REGISTER": "إنشاء حساب",
+        "LOGIN": "تسجيل الدخول",
+        "FORGOT_PASSWORD": "نسيت كلمة السر",
+        "CODE_VERIFY": "التحقق من الرمز",
+        "RESET_PASS": "إعادة تعيين كلمة السر"
+    },
+    "HOME": {
+        "TITLE": "الرئيسية"
+    },
+    "PRODUCTS": {
+        "TITLE": "المنتجات"
+    },
+    "CATEGORIES": {
+        "TITLE": "الفئات"
+    },
+    "BRANDS": {
+        "TITLE": "الماركات"
+    },
+    "DETAILS": {
+        "TITLE": "تفاصيل المنتج"
+    },
+    "CART": {
+        "TITLE": "تفاصيل العربة"
+    },
+    "CHECKOUT": {
+        "TITLE": "الدفع"
+    },
+    "ORDERS": {
+        "TITLE": "كل الطلبات"
+    },
+    "PROFILE": {
+        "TITLE": "ملفي الشخصي",
+        "CHANGE_PASS": "تغيير كلمة السر"
+    },
+    "WISHLIST": {
+        "TITLE": "قائمة الأمنيات"
+    },
+    "ERROR": {
+        "NOT_FOUND": "الصفحة غير موجودة"
+    }
+}

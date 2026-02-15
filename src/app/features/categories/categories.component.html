@@ -1,0 +1,11 @@
+<section>
+    <div class="container mx-auto w-[95%]">
+        <div class="parent grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            @for (category of categoriesDetailsArr(); track category._id) {
+            <app-category-card (click)="navigateToCategory(category._id)" class="animate__animated"
+                animate.enter="animate__fadeInUp" [categoriesDetails]="category"></app-category-card>
+            }
+        </div>
+    </div>
+
+</section>

@@ -1,0 +1,11 @@
+<div class="card-container">
+    <div class="brand-card h-72 relative group shadow-2xl hover:border-green-700/0 hover:shadow-2xl/0 transition-all duration-300 shadow-green-200 overflow-hidden border-[7px] border-green-700 rounded-[10px]">
+        <img class="size-full block group-hover:opacity-50 transition-all duration-300" [src]="brandCardData.image" [alt]="brandCardData.name">
+        <div
+            class="flex justify-center items-center absolute inset-0 opacity-0 transition-all duration-300 bg-green-400/30 group-hover:opacity-100">
+            <h3 class="text-2xl font-bold text-green-700">
+                {{brandCardData.name}}
+            </h3>
+        </div>
+    </div>
+</div>

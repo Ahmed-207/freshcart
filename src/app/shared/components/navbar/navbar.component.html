@@ -1,0 +1,69 @@
+<nav class="bg-gray-200 fixed w-full z-20 top-0 start-0 border-b border-default">
+    <div class="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-3">
+        <a routerLink="" class="flex items-center space-x-1 rtl:space-x-reverse">
+            <img src="/assets/images/freshcart-logo.svg" class="size-11" alt="Logo" />
+        </a>
+        <button (click)="toggleMenu()" type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+            aria-controls="navbar-default" [aria-expanded]="!isMenuCollapsed">
+            <span class="sr-only">{{"Open main menu"|translate}}</span>
+            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+            </svg>
+        </button>
+        <div [class.hidden]="isMenuCollapsed" class="w-full md:flex md:grow md:w-auto px-2" id="navbar-default">
+            @if(isLogged === true){
+            <ul
+                class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base  md:flex-row md:space-x-3 rtl:space-x-reverse md:mt-0 md:border-0 ">
+                <li>
+                    <a routerLinkActive="text-white bg-green-600 " routerLink="/home" class="block py-2 rounded  md:px-1 md:py-2"
+                        aria-current="page">{{ 'Home' | translate }}</a>
+                </li>
+                <li>
+                    <a routerLinkActive="text-white bg-green-600 " routerLink="/categories"
+                        class="block py-2  rounded  md:px-1 md:py-2" aria-current="page">{{'Categories' | translate}}</a>
+                </li>
+                <li>
+                    <a routerLinkActive="text-white bg-green-600 " routerLink="/products"
+                        class="block py-2  rounded  md:px-1 md:py-2" aria-current="page">{{'Products' | translate}}</a>
+                </li>
+                <li>
+                    <a routerLinkActive="text-white bg-green-600 " routerLink="/brands"
+                        class="block py-2  rounded  md:px-1 md:py-2" aria-current="page">{{'Brands' | translate}}</a>
+                </li>
+                <li>
+                    <a routerLinkActive="text-white bg-green-600 " routerLink="/allorders"
+                        class="block py-2  rounded  md:px-1 md:py-2" aria-current="page">{{'My Orders'|translate}}</a>
+                </li>
+            </ul>
+            }
+            <ul
+                class="font-medium ms-auto flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base  md:flex-row md:space-x-3 rtl:space-x-reverse md:mt-0 md:border-0 ">
+                @if(isLogged === false){
+                <li>
+                    <a routerLinkActive="text-white bg-green-600 " routerLink="/login"
+                        class="block py-2  rounded  md:px-1 md:py-2" aria-current="page">{{'Login' | translate}}</a>
+                </li>
+                <li>
+                    <a routerLinkActive="text-white bg-green-600 " routerLink="/register"
+                        class="block py-2  rounded  md:px-1 md:py-2" aria-current="page">{{'Register' | translate}}</a>
+                </li>
+                }@else {
+                <li>
+                    <p-overlaybadge severity="success" [value]="cartItemsCount()"
+                        class="block py-2  rounded  md:px-1 md:py-2 cursor-pointer">
+                        <i class="fa-solid fa-cart-shopping fa-xl" routerLink="/cart" style="color: #000000;"></i>
+                    </p-overlaybadge>
+                </li>
+                <li class="relative my-1 md:my-0 md:mx-2">
+                    <app-user-dropdown></app-user-dropdown>
+                </li>
+                }
+                <li class=" my-1 md:my-0 md:mx-2">
+                    <app-lang-switcher></app-lang-switcher>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

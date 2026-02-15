@@ -1,0 +1,22 @@
+<section>
+    <div class="container w-[95%] mx-auto my-3">
+        <h1 class="my-3 text-3xl font-medium">{{'My all orders'|translate}}</h1>
+        <div class="bg-gray-300 rounded-xl p-5">
+            @for(order of allUserOrders(); track order._id){
+            <div (click)="getSpecificOrderData(order._id)"
+                class="animate__animated order-container p-2 rounded-xl bg-white my-2" animate.enter="animate__fadeInUp"
+                animate.leave="animate__fadeOutDown">
+                <h2 class=" text-start mx-2 my-5 text-xl text-green-500 font-medium">{{'Order #'|translate}}{{order._id}}</h2>
+            </div>
+            }@empty {
+            <div class="text-center p-5">
+                <h3 class="text-2xl text-green-500">{{'No items to show'|translate}}</h3>
+            </div>
+            }
+        </div>
+    </div>
+    @if(allOrderDetails()?._id && modalFlag()){
+    <app-order-card [orderDetails]="allOrderDetails()!" [(flag)]="modalFlag" class="animate__animated"
+        animate.enter="animate__fadeInUp" animate.leave="animate__fadeOutDown"></app-order-card>
+    }
+</section>

@@ -1,0 +1,34 @@
+<div [routerLink]="['/details', productData.slug, productData._id]"
+    class="mb-4 p-2 group/parentCard flex items-center justify-center h-full">
+    <p-card [style]="{ width: '25rem', overflow: 'hidden', height:'100%'}">
+        <ng-template #header>
+            <div class="w-full overflow-hidden relative">
+                <img class="w-full group-hover/parentCard:scale-[120%] transition-transform duration-300"
+                    [src]="productData.imageCover" [alt]="productData.title" />
+                <div class="wishlist-container absolute top-0 right-0 -translate-x-[30%] translate-y-[50%]">
+                    @if(wishListFlag()){
+                    <i (click)="removeFromWishList($event,productData._id)"
+                        class="fa-solid fa-heart text-green-500 text-xl"></i>
+                    }@else {
+                    <i (click)="addToWishList($event,productData._id)"
+                        class="fa-regular fa-heart text-green-500 text-xl"></i>
+                    }
+                </div>
+            </div>
+        </ng-template>
+        <ng-template #title>{{productData.title | productCut : 2}}</ng-template>
+        <ng-template #subtitle>{{productData.category.name}}</ng-template>
+        <div class="flex justify-between">
+            <span>{{productData.price | currency : 'GBP' }}</span>
+            <span>{{productData.ratingsAverage + ' '}} <i class="fa-solid fa-star text-yellow-300"></i></span>
+        </div>
+        <ng-template #footer>
+            <div class="flex gap-4">
+                <button (click)="handleChildClick($event)" (click)="addProductToCart(productData._id)"
+                    class="group-hover/parentCard:translate-y-[50%] translate-y-[300%] bg-green-500 text-white rounded-[5px] hover:bg-green-800 transition-all w-full duration-500">{{"Add to Cart"|translate}}</button>
+            </div>
+        </ng-template>
+    </p-card>
+</div>
+
+<p-toast />

@@ -1,0 +1,22 @@
+<section class="mt-20">
+    <div class="container mx-auto w-[95%]">
+        <div class="product-container grid md:grid-cols-12">
+            <div class="image-container p-3 col-span-4">
+                <img class="w-full" [src]="productDetailsForPage().imageCover" [alt]="productDetailsForPage().title">
+            </div>
+            <div class="product-details p-2 col-span-8 my-auto">
+                <h3 class="my-3 text-green-700 font-semibold text-3xl">{{productDetailsForPage().title}}</h3>
+                <h4 class="mb-3 text-gray-700 font-medium text-xl">{{productDetailsForPage().category.name}}</h4>
+                <p class="mb-3 text-gray-600 text-lg">{{productDetailsForPage().description}}</p>
+                <h4 class="mb-3 text-gray-700 font-medium text-xl">{{productDetailsForPage().price + ' L.E'}}</h4>
+                <div class="p-2">
+                    <button (click)="addToCart()"
+                        class="w-full p-3 text-white bg-green-400 rounded-[5px] hover:bg-green-700 transition-colors duration-300">
+                        {{"add to cart"|translate}}
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

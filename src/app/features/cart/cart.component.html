@@ -1,0 +1,113 @@
+<section class="mb-10">
+    @if(cartProducts().products){
+    <div class="container w-[95%] mx-auto">
+        <div class="grid sm:grid-cols-12">
+            <div class="md:col-span-8 p-2">
+                <div class="rounded-lg bg-gray-200 shadow p-4">
+                    <div class="flex justify-between items-center my-2">
+                        <h2 class="text-2xl font-medium">{{'Cart items'|translate}}</h2>
+                        @if(cartProducts().products.length > 0){
+                        <span class="text-xl font-medium">{{'Total Count : '|translate}}{{cartProducts().products.length}}</span>
+                        }
+                    </div>
+                    @for (item of cartProducts().products; track item.product._id) {
+                    <div class="grid grid-cols-12 gap-3 rounded bg-light p-2 my-2">
+                        <div class="col-span-1">
+                            <div class="image-container">
+                                <img [src]="item.product.imageCover" class="w-full d-block" [alt]="item.product.title">
+                            </div>
+                        </div>
+                        <div class="col-span-11">
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <h3>{{item.product.title}}</h3>
+                                    <div class="flex gap-2 items-center">
+                                        <div class="flex gap-5 p-1 my-2 rounded-4xl bg-gray-200 border">
+                                            <span><i class="fa-solid fa-plus cursor-pointer"
+                                                    (click)="changeProductCount(item.product._id,item.count + 1)"></i></span>
+                                            <span>{{item.count}}</span>
+                                            <span><i class="fa-solid fa-minus cursor-pointer"
+                                                    (click)="changeProductCount(item.product._id,item.count - 1)"></i></span>
+                                        </div>
+                                        <span><i class="fa-solid fa-trash-can cursor-pointer"
+                                                (click)="removeProduct(item.product._id)"></i></span>
+                                    </div>
+                                </div>
+                                <span>{{item.price | currency : 'GBP'}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    }@empty {
+                    <div class="flex justify-center items-center col-span-full py-16">
+                        <div class="bg-white rounded-2xl shadow-xl p-10 max-w-xl w-full border-t-4 border-green-500">
+
+                            <!-- Icon and Title Row -->
+                            <div class="flex items-center justify-center gap-4 mb-6">
+                                <div class="bg-gray-200 p-4 rounded-full">
+                                    <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-3xl font-bold text-black">{{'Empty Cart'|translate}}</h3>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-center text-gray-600 text-base mb-8 leading-relaxed">
+                                {{"Looks like you haven't added any products yet. Start exploring our amazing collection and find something you love!"|translate}}
+                            </p>
+
+                            <!-- Divider -->
+                            <div class="border-t border-gray-200 my-6"></div>
+
+                            <!-- Call to Action -->
+                            <div class="text-center">
+                                <button routerLink="/products"
+                                    class="inline-flex items-center gap-2 px-8 py-4 bg-green-500 text-white text-lg font-bold rounded-lg hover:bg-green-600 transition-all duration-300 shadow-lg hover:shadow-xl mb-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                    {{"Start Shopping Now"|translate}}
+                                </button>
+                            </div>
+
+                            <!-- Stats or Info Cards -->
+                            <div class="grid grid-cols-3 gap-4 mt-8">
+                                <div class="text-center p-3 bg-gray-200 rounded-lg">
+                                    <p class="text-2xl font-bold text-black">500+</p>
+                                    <p class="text-xs text-gray-600 mt-1">{{"Products"|translate}}</p>
+                                </div>
+                                <div class="text-center p-3 bg-gray-200 rounded-lg">
+                                    <p class="text-2xl font-bold text-green-500">{{"Free"|translate}}</p>
+                                    <p class="text-xs text-gray-600 mt-1">{{"Shipping"|translate}}</p>
+                                </div>
+                                <div class="text-center p-3 bg-gray-200 rounded-lg">
+                                    <p class="text-2xl font-bold text-black">24/7</p>
+                                    <p class="text-xs text-gray-600 mt-1">{{"Support"|translate}}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+            <div class="md:col-span-4 p-2">
+                <div class="rounded-lg bg-gray-200 shadow p-4">
+                    <h2 class="my-2 text-2xl font-medium">{{"Order Summary"|translate}}</h2>
+                    <div class="flex flex-wrap justify-between items-center my-2 rounded p-2 bg-light">
+                        <span>{{"Total price"|translate}}</span>
+                        <span>{{cartProducts().totalCartPrice | currency : 'GBP'}}</span>
+                    </div>
+                    <div class="my-2">
+                        <button class="w-full btn-main" [routerLink]="['/checkout', cartProducts()._id]">{{"Proceed To CheckOut"|translate}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</section>

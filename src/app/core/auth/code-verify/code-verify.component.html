@@ -1,0 +1,20 @@
+<section class="p-2 self-center mx-auto bg-gray-200 shadow-xs w-[80%] rounded ">
+
+    <div class="my-2 w-[90%] text-start">
+        <h2 class="text-green-600 text-2xl">{{'enter the code sent to your email'|translate}}</h2>
+    </div>
+    <form (ngSubmit)="onVerifyCodeSubmit()" [formGroup]="verifyCodeForm()" class="w-[90%] my-5 mx-auto">
+        <div class="relative z-0 w-full my-5 group">
+            <input formControlName="resetCode" type="text" name="resetCode" id="resetCode" class="main-input peer"
+                placeholder=" " />
+            <label for="resetCode" class="main-label">{{'Verification Code'|translate}}</label>
+        </div>
+        <div class="w-full my-5 group mx-auto flex justify-end">
+            <button [disabled]="isLoading()" [disabled]="verifyCodeForm().invalid" type="submit" class="btn-main">{{'verify'| translate}}
+                @if(isLoading()){
+                <i class="fas fa-spinner animate-spin"></i>
+                }
+            </button>
+        </div>
+    </form>
+</section>

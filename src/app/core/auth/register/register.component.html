@@ -1,0 +1,111 @@
+<section class="p-2 mb-10 mx-auto bg-gray-200 shadow-xs w-[80%] rounded ">
+
+    <div class="my-2 w-[90%] mx-auto">
+
+        <h2 class="text-green-600 text-3xl">{{'Register Now'|translate}}</h2>
+
+    </div>
+
+    <form (ngSubmit)="onRegisterSubmit()" [formGroup]="registerForm" class="w-[90%] my-5 mx-auto">
+        <div class="relative z-0 w-full my-5 group">
+            <input formControlName="name" type="text" name="name" id="name" class="main-input peer"  placeholder=" " />
+            <label for="name" class="main-label">{{'Name'|translate}}</label>
+            @if( registerForm.get('name')?.touched && registerForm.get('name')?.errors ){
+            <div class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                role="alert">
+                <div>
+                    <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                        @if( registerForm.get('name')?.getError('required') ){
+                        <li>{{'username is required'|translate}}</li>
+                        }@else if ( registerForm.get('name')?.getError('pattern') ) {
+                        <li>{{'username must be at least 3 charcters and at most 9 characters'|translate}}</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="relative z-0 w-full my-5 group">
+            <input formControlName="email" type="email" name="email" id="email" class="main-input peer"
+                placeholder=" " />
+            <label for="email" class="main-label">{{'Email address'|translate}}</label>
+            @if( registerForm.get('email')?.touched && registerForm.get('email')?.errors ){
+            <div class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                role="alert">
+                <div>
+                    <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                        @if( registerForm.get('email')?.getError('required') ){
+                        <li>{{'Email address is required'|translate}}</li>
+                        }@else if ( registerForm.get('email')?.getError('email') ) {
+                        <li>{{'Please enter a valid email address'|translate}}</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            }
+        </div>
+
+        <div class="relative z-0 w-full my-5 group">
+            <input formControlName="password" type="password" name="password" id="password" class="main-input peer"
+                placeholder=" " />
+            <label for="password" class="main-label">{{'Password'|translate}}</label>
+            @if( registerForm.get('password')?.errors && registerForm.get('password')?.touched ){
+            <div class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                role="alert">
+                <div>
+                    <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                        @if( registerForm.get('password')?.getError('required') ){
+                        <li>{{'Password is required'|translate}}</li>
+                        }@else if ( registerForm.get('password')?.getError('pattern') ) {
+                        <li>{{'Minimum eight characters, at least one upper case English letter, one lower case English letter, one number and one special character'|translate}}</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            }
+        </div>
+
+        <div class="relative z-0 w-full my-5 group">
+            <input formControlName="rePassword" type="password" name="rePassword" id="rePassword"
+                class="main-input peer" placeholder=" " />
+            <label for="rePassword" class="main-label">{{'Confirm password'|translate}}</label>
+            @if( registerForm.get('rePassword')?.touched && registerForm.errors ){
+            <div class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                role="alert">
+                <div>
+                    <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                        <li>{{'Confirm your password correcty'|translate}}</li>
+                    </ul>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="relative z-0 w-full my-5 group">
+            <input formControlName="phone" type="tel" name="phone" id="phone" class="main-input peer" placeholder=" " />
+            <label for="phone" class="main-label">{{'Phone Number'|translate}}</label>
+            @if( registerForm.get('phone')?.touched && registerForm.get('phone')?.errors ){
+            <div class="flex p-4 mb-4 text-sm text-fg-danger-strong rounded-base bg-danger-soft border border-danger-subtle"
+                role="alert">
+                <div>
+                    <ul class="mt-2 list-disc list-outside space-y-1 ps-2.5">
+                        @if( registerForm.get('phone')?.getError('required') ){
+                        <li>{{'phone number is required'|translate}}</li>
+                        }@else if ( registerForm.get('phone')?.getError('pattern') ){
+                        <li>{{'Please enter a valid egyptian phone number'|translate}}</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            }
+        </div>
+
+        <div class="w-full my-5 group mx-auto flex justify-end">
+            <button [disabled]="isLoading()" type="submit" class="btn-main">{{'Register'|translate}}
+                @if(isLoading()){
+                <i class="fas fa-spinner animate-spin"></i>
+                }
+            </button>
+        </div>
+    </form>
+    <p-toast />
+</section>

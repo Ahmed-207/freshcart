@@ -1,0 +1,7 @@
+/* This centers the container so the label stays aligned with the input */
+:host ::ng-deep p-floatlabel {
+    width:80%;
+    margin-inline: auto;
+    margin-block:25px;
+
+}

@@ -1,0 +1,36 @@
+<section class="p-2 self-center mx-auto bg-gray-200 shadow-xs w-[80%] rounded ">
+
+    <div class="my-2 w-[90%] mx-auto">
+        <h2 class="text-green-600 text-3xl">{{'Login Now'| translate}}</h2>
+    </div>
+    <form (ngSubmit)="onLoginSubmit()" [formGroup]="loginForm" class="w-[90%] my-5 mx-auto">
+        <div class="relative z-0 w-full my-5 group">
+            <input formControlName="email" type="email" name="email" id="email" class="main-input peer"
+                placeholder=" " />
+            <label for="email" class="main-label">{{'Email address'|translate}}</label>
+        </div>
+        <div class="relative z-0 w-full my-5 group">
+            <input formControlName="password" type="password" name="password" id="password" class="main-input peer"
+                placeholder=" " />
+            <label for="password" class="main-label">{{'Password'|translate}}</label>
+        </div>
+        <div class="w-full my-5 group mx-auto flex justify-end">
+            <button [disabled]="isLoading()" [disabled]="loginForm.invalid" type="submit" class="btn-main">{{'Login'|translate}}
+                @if(isLoading()){
+                <i class="fas fa-spinner animate-spin"></i>
+                }
+            </button>
+        </div>
+    </form>
+    <div class="w-full text-center mt-3">
+        <h4 class="text-green-700">{{"don't have an acount? "|translate}}<span><a
+                    class="text-green-700 hover:text-green-500 transition-color duration-300 cursor-pointer"
+                    (click)="navigateToRegister()">{{'create new account'|translate}}</a></span></h4>
+    </div>
+    <div class="w-full text-center mt-3">
+        <h4 class="text-green-700">{{'forgot your password ? '|translate}}<span><a
+                    class="text-green-700 hover:text-green-500 transition-color duration-300 cursor-pointer"
+                    (click)="navigateToEmailVerify()">{{'reset now'|translate}}</a></span></h4>
+    </div>
+    <p-toast />
+</section>

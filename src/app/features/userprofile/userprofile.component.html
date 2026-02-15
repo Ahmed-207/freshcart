@@ -1,0 +1,43 @@
+<section class="my-5">
+    <div class="container w-[95%] mx-auto p-5">
+        <div class="bg-gray-300 rounded-lg p-4 w-[80%] mx-auto">
+            <div class="form-container bg-white rounded-lg shadow-xl p-4">
+                @if(!flag() && userName()){
+                <h2 class="text-3xl text-green-500 font-medium my-3" >
+                    {{"Hi, "|translate}}{{userName()}}</h2>
+                }@else {
+                <h2 class="text-3xl text-green-500 font-medium my-3">
+                    {{"Edit My Profile"|translate}}</h2>
+                }
+                <div>
+                    <form [formGroup]="changeDataForm()">
+                        <p-floatlabel variant="on">
+                            <input formControlName="name" class="w-full" pInputText type="text" id="nameInput"
+                                autocomplete="off" />
+                            <label for="nameInput">{{"Name"|translate}}</label>
+                        </p-floatlabel>
+                        <p-floatlabel variant="on">
+                            <input formControlName="email" class="w-full" pInputText type="email" id="emailInput"
+                                autocomplete="off" />
+                            <label for="emailInput">{{"E-mail Adress"|translate}}</label>
+                        </p-floatlabel>
+                        <p-floatlabel variant="on">
+                            <input formControlName="phone" class="w-full" pInputText type="phone" id="phoneInput"
+                                autocomplete="off" />
+                            <label for="phoneInput">{{"Phone Number"|translate}}</label>
+                        </p-floatlabel>
+                    </form>
+                    <div class="btn-container flex justify-center items-center p-2">
+                        @if(flag()){
+                        <button routerLink="/changepass" class="btn-main mx-2">{{"change password"|translate}}</button>
+                        <button (click)="onChangeDataSubmit()" [disabled]="changeDataForm().invalid" class="btn-main mx-2">{{"change profile info"|translate}}</button>
+                        }@else {
+                        <button class="btn-main mx-2" (click)="toggleButton()">{{"update profile"|translate}}</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <p-toast/>
+</section>

@@ -1,0 +1,28 @@
+<div class="container mx-auto w-[95%]">
+
+    <h3 class=" text-green-800 text-3xl my-3 font-semibold">{{"Our Popular Categories"|translate}}</h3>
+    <div class="carousel-container">
+        <owl-carousel-o [options]="categoriesCustomOptions">
+
+            @for (category of categoriesSliderData(); track category._id) {
+            <ng-template carouselSlide [id]="category._id">
+                <div animate.enter="animate__fadeInUp" class=" animate__animated relative group/parentSlide peer/siblingSlide">
+                    <img class="w-full h-72" [src]="category.image" [alt]="category.name" [title]="category.name">
+                    <div
+                        class=" overflow-hidden transition-all duration-300 opacity-0 group-hover/parentSlide:opacity-100 absolute inset-0 bg-green-200/50 flex justify-center items-center">
+                        <h4
+                            class="text-2xl text-green-700 font-medium text-center translate-y-[120%] group-hover/parentSlide:translate-y-0 transition-all duration-300">
+                            {{category.name}}</h4>
+                    </div>
+
+                </div>
+                <h4
+                    class="text-2xl text-green-700 font-medium text-center overflow-hidden peer-hover/siblingSlide:-translate-y-[%120] peer-hover/siblingSlide:opacity-0 transition-all duration-300 ">
+                    {{category.name}}</h4>
+            </ng-template>
+            }
+
+        </owl-carousel-o>
+    </div>
+
+</div>

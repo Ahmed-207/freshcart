@@ -1,0 +1,54 @@
+<div class="container mx-auto w-full">
+    <h3 class=" text-green-800 text-3xl my-3 font-semibold">{{"Our Products"|translate}}</h3>
+    <div class="card">
+        <p-menubar [model]="mainMenuItems()">
+            <ng-template #end>
+                <div class="flex items-center gap-2">
+                    <input type="text" pInputText placeholder="Search" [(ngModel)]="searchValue" class="w-70" />
+                </div>
+            </ng-template>
+        </p-menubar>
+    </div>
+    <div>
+        <div class="parent grid gap-2 md:grid-cols-2 lg:grid-cols-5">
+            @for (product of productList() | search : searchValue ; track product.id) {
+            <app-product-card class="animate__animated" animate.enter="animate__fadeInLeft"
+                [productData]="product"></app-product-card>
+            }@empty {
+            <div class="flex justify-center items-center col-span-full min-h-100">
+                <div class="max-w-md w-full text-center px-6 py-12">
+
+                    <!-- Empty State Icon -->
+                    <div class="mb-6">
+                        <div class="inline-flex items-center justify-center w-32 h-32 bg-gray-200 rounded-full">
+                            <svg class="w-20 h-20 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Main Message -->
+                    <h3 class="text-3xl font-bold text-black mb-3">{{"No Products Found"|translate}}</h3>
+
+                    <!-- Subtext -->
+                    <p class="text-gray-600 mb-8 text-base leading-relaxed">
+                        {{"We couldn't find any products matching your criteria. Try adjusting your filters or browse our featured collections."|translate}}
+                    </p>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <button (click)="getAllProducts(1,undefined,undefined)"
+                            class="w-full sm:w-auto px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors duration-300 shadow-md">
+                        {{"Clear all filters"|translate}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="card flex justify-center">
+            <p-paginator (onPageChange)="onPageChange($event)" [first]="first()" [rows]="productsPerPage()" [totalRecords]="totalProducts()" />
+        </div>
+    </div>
+</div>

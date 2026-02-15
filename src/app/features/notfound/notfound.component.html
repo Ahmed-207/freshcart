@@ -1,0 +1,50 @@
+<div class="bg-gray-200 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full bg-white rounded-lg shadow-2xl overflow-hidden">
+        <div class="bg-black px-8 py-6">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-bold text-green-500">FreshCart</h1>
+                <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z">
+                    </path>
+                </svg>
+            </div>
+        </div>
+        <div class="px-8 py-12 text-center">
+            <div class="mb-6">
+                <div class="inline-flex items-center justify-center w-32 h-32 bg-gray-200 rounded-full">
+                    <svg class="w-20 h-20 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+            <h2 class="text-6xl font-bold text-black mb-4">404</h2>
+            <h3 class="text-2xl font-semibold text-black mb-3">Oops! Page Not Found</h3>
+            <p class="text-gray-600 mb-8 max-w-md mx-auto">
+                The page you're looking for seems to have wandered off.
+                Don't worry, even the best shoppers get lost sometimes!
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a routerLink="/"
+                    class="w-full sm:w-auto px-8 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition-colors duration-300 shadow-lg cursor-pointer">
+                    Back to Home
+                </a>
+                <a routerLink="/products"
+                    class="w-full sm:w-auto px-8 py-3 bg-black text-green-500 font-semibold rounded-lg hover:bg-gray-800 transition-colors duration-300 border-2 border-green-500 cursor-pointer">
+                    Browse Products
+                </a>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <p class="text-sm text-gray-600 mb-4">Quick Links:</p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a *ngFor="let link of quickLinks" [routerLink]="link.path"
+                        class="text-green-500 hover:text-green-600 font-medium transition-colors cursor-pointer">
+                        {{ link.label }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

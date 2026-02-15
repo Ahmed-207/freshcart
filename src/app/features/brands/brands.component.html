@@ -1,0 +1,11 @@
+<section class="mb-10">
+    <div class="container w-[95%] mx-auto relative">
+        <h1 class="text-green-700 text-3xl font-bold text-start mb-5">{{'Shop Our Brands'|translate}}</h1>
+        <div class="parent gap-2 grid md:grid-cols-3 lg:grid-cols-4">
+            @for (brand of brandsData(); track brand._id) {
+            <app-brand-card (click)="navigateToProductsByBrand(brand._id)" class="animate__animated"
+                animate.enter="animate__fadeInUp" [brandCardData]="brand"></app-brand-card>
+            }
+        </div>
+    </div>
+</section>

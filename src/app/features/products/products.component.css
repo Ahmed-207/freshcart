@@ -1,0 +1,4 @@
+::ng-deep .p-menubar .p-menubar-submenu {
+    max-height: 250px !important;
+    overflow-y: auto !important;
+}

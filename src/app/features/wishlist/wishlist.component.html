@@ -1,0 +1,48 @@
+<section class="my-5">
+    <div class="container mx-auto w-full">
+        <h3 class=" text-green-800 text-3xl my-3 font-semibold">{{"My wishlist"|translate}}</h3>
+        <div>
+            <div class="parent grid gap-2 md:grid-cols-2 lg:grid-cols-5">
+                @for (product of wishListProducts(); track product._id) {
+                <app-product-card class="animate__animated" animate.enter="animate__fadeInLeft"
+                    [productData]="product"></app-product-card>
+                }@empty {
+                <div class="min-h-[60vh] md:col-span-2 lg:col-span-5 flex items-center justify-center p-6">
+                    <div class="text-center max-w-md mx-auto">
+                        <div class="mb-6 flex justify-center">
+                            <div class="relative">
+                                <div class="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center">
+                                    <svg class="w-12 h-12 text-black" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                                    </svg>
+                                </div>
+                                <div class="absolute -top-2 -right-2 w-4 h-4 bg-green-500 rounded-full"></div>
+                                <div class="absolute -bottom-1 -left-1 w-3 h-3 bg-green-500 rounded-full opacity-60">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="text-2xl font-bold text-black mb-3">
+                            {{"Your Wishlist is Empty"|translate}}
+                        </h2>
+
+                        <p class="text-gray-600 mb-8 leading-relaxed">
+                           {{" Start adding items you love to your wishlist.Save your favorites and never lose track of products you want!"|translate}}
+                        </p>
+                        <button [routerLink]="['/products']" type="button"
+                            class="inline-flex items-center gap-2 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg shadow-lg hover:bg-green-600 hover:shadow-xl hover:scale-105 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                            </svg>
+                            <span>{{"Start Shopping"|translate}}</span>
+                        </button>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

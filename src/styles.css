@@ -1,3 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "tailwindcss";
+@import 'animate.css/animate.min.css';
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+@layer components {
+    .btn-main {
+        @apply bg-green-600 py-1.75 px-5 border border-gray-300 rounded-[5px] text-white cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-300 disabled:hover:bg-gray-300 hover:bg-green-700 transition-[background-color] duration-500;
+    }
+
+    .main-input {
+        @apply block py-2.5 px-0 w-full text-[16px] text-gray-700 font-light bg-transparent border-0 border-b-2 border-default-medium appearance-none focus:outline-none focus:ring-0 focus:border-green-600
+    }
+
+    .main-label {
+        @apply absolute text-lg text-green-600 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-left peer-focus:start-0 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto
+    }
+}
+
+.p-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .p-card-title {
+        margin-bottom: 0.5rem;
+        min-height: 4rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}

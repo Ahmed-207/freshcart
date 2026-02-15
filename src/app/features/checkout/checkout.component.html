@@ -1,0 +1,33 @@
+<section class="p-2 self-center mx-auto bg-gray-200 shadow-xs w-[80%] rounded my-10 ">
+
+    <div class="my-2 w-[90%] mx-auto">
+
+        <h2 class="text-green-600 text-3xl">{{"Shipping Details"|translate}}</h2>
+
+    </div>
+
+    <form [formGroup]="shippingDetails"  class="w-[90%] my-5 mx-auto">
+        <div formGroupName="shippingAddress">
+            <div class="relative z-0 w-full my-5 group">
+                <input formControlName="details" type="details" name="details" id="details" class="main-input peer"
+                    placeholder=" " />
+                <label for="details" class="main-label">{{"Details"|translate}}</label>
+            </div>
+            <div class="relative z-0 w-full my-5 group">
+                <input formControlName="phone" type="phone" name="phone" id="phone" class="main-input peer"
+                    placeholder=" " />
+                <label for="phone" class="main-label">{{"Phone"|translate}}</label>
+            </div>
+
+            <div class="relative z-0 w-full my-5 group">
+                <input formControlName="city" type="text" name="city" id="city" class="main-input peer"
+                    placeholder=" " />
+                <label for="city" class="main-label">{{"City"|translate}}</label>
+            </div>
+        </div>
+        <div class="w-full my-5 group mx-auto">
+            <button (click)="payWithCash()" type="button" class="btn-main w-full mb-2">{{"Pay with Cash"|translate}}</button>
+            <button (click)="payWithVisa()" type="button" class="btn-main w-full">{{"Pay with card"|translate}}</button>
+        </div>
+    </form>
+</section>

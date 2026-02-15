@@ -1,0 +1,32 @@
+<section class="my-5">
+    <div class="container w-[95%] mx-auto p-5">
+        <div class="bg-gray-300 rounded-lg p-4 w-[80%] mx-auto">
+            <div class="form-container bg-white rounded-lg shadow-xl p-4">
+                <h2 class="text-3xl text-green-500 font-medium my-3">{{"Change My Password"|translate}}</h2>
+                <div>
+                    <form [formGroup]="changePassForm()" (ngSubmit)="onChangePassSubmit()">
+                        <p-floatlabel variant="on">
+                            <input formControlName="currentPassword" class="w-full" pInputText type="password" id="currPass"
+                                autocomplete="off" />
+                            <label for="currPass">{{"Old Password"|translate}}</label>
+                        </p-floatlabel>
+                        <p-floatlabel variant="on">
+                            <input formControlName="password" class="w-full" pInputText type="password" id="newPass"
+                                autocomplete="off" />
+                            <label for="newPass">{{"New Password"|translate}}</label>
+                        </p-floatlabel>
+                        <p-floatlabel variant="on">
+                            <input formControlName="rePassword" class="w-full" pInputText type="password" id="rePass"
+                                autocomplete="off" />
+                            <label for="rePass">{{"Re-Enter New Password"|translate}}</label>
+                        </p-floatlabel>
+                        <div class="btn-container flex justify-center items-center p-2">
+                            <button type="submit" class="btn-main">{{"change password"|translate}}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p-toast/>
+</section>
